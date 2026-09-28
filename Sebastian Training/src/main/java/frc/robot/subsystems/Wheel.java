@@ -1,5 +1,7 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+
 public class Wheel {
 
     public Wheel() {
@@ -17,6 +19,17 @@ public class Wheel {
         wheel2.tractionType = "b";
         wheel2.wheelConfig();
         wheel2.spinWheel();
+
+        DigitalInput limitSwitch = new DigitalInput(0);
+
+        if(!limitSwitch.get()) {
+            System.out.println("Stop Wheel");
+        }
+        else {
+
+        }
+
+        
     }
 
 
