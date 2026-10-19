@@ -29,7 +29,8 @@ public class Wheel {
 
         }
 
-        
+        //double revolutions = motor.getEncoder().getPosition();
+        // Not sure what to add here.
     }
 
 
