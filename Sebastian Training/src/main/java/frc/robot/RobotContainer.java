@@ -7,8 +7,10 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.NeoMotorCommand;
 import frc.robot.commands.TalonMotorCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.NeoMotorSubsystem;
 import frc.robot.subsystems.TalonMotorSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -27,6 +29,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
 
   TalonMotorSubsystem talonMotorSubsystem = new TalonMotorSubsystem();
+  NeoMotorSubsystem neoMotorSubsystem = new NeoMotorSubsystem();
   XboxController xboxController = new XboxController(0); // The 0 represents the port in which the controller is plugged
                                                          // into.
 
@@ -62,6 +65,9 @@ public class RobotContainer {
   private void configureBindings() {
     talonMotorSubsystem.setDefaultCommand(new TalonMotorCommand(talonMotorSubsystem,
 () -> xboxController.getLeftY()));
+
+    neoMotorSubsystem.setDefaultCommand(new NeoMotorCommand(neoMotorSubsystem,
+() -> xboxController.getLeftX()));
   }
 
   /**
